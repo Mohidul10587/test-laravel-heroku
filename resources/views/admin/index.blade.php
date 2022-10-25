@@ -370,6 +370,25 @@
 
 <div class="content_wrapper">
     <!--middle content wrapper-->
+
+
+    @if(Session::has('error'))
+    <div class="ml-2 mr-2 alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>{{session::get('error')}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @endif
+
+
+<h4>Admin Name: {{ Auth::guard('admin')->user()->name }}</h4>
+<h4>Admin Email: {{ Auth::guard('admin')->user()->email }}</h4>
+
+
+
+
+
     <div class="middle_content_wrapper">
         <!-- counter_area -->
         <section class="counter_area">
