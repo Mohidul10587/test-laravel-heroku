@@ -32,22 +32,10 @@
     <!-- wrapper -->
     <div class="wrapper">
 
-
-
-
-
-
         @yield('admin')
-
-
-
-
 
     </div>
     <!--/ wrapper -->
-
-
-
     <!-- jquery -->
     <script src="{{asset('panel/assets/js/jquery.min.js')}}"></script>
     <!-- popper Min Js -->
