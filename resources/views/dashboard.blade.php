@@ -9,7 +9,11 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                this is div
+                    <p>{{ Auth::user()->name }}</p>
+                   
+                        <p>{{$job->id}}</p>
+                        <p>{{$job->folder_name}}</p>
+                 
                 </div>
             </div>
         </div>
