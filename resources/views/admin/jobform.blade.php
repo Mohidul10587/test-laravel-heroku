@@ -56,7 +56,7 @@
 
             @foreach ($users as $user)
                 <option value="{{ $user->email }}">
-                   {{ $user->email }}
+                  Email of {{ $user->name }}
                 </option>
             @endforeach
 
