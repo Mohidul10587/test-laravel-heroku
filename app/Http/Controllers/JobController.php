@@ -26,6 +26,7 @@ class JobController extends Controller
         $postedData->deadline_time = $req->deadline_time;
         $postedData->empoyee_name = $req->empoyee_name;
         $postedData->save();
+
         return redirect('/');
     }
 

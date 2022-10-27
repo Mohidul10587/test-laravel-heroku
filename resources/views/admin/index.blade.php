@@ -376,28 +376,28 @@
                     <div class="counter">
                         <div class="counter_item">
                              <span><i class="fa fa-code"></i></span>
-                              <h2 class="timer count-number" data-to="300" data-speed="1500"></h2>
+                              <h2  class="timer count-number" data-to="{{count($data[0])}}" data-speed="1500"></h2>
                         </div>
                      
-                       <p class="count-text ">SomeText GoesHere</p>
+                       <h5 class="count-text ">Total Pending Jobs</h5>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="counter">
                         <div class="counter_item">
                             <span><i class="fa fa-coffee"></i></span>
-                             <h2 class="timer count-number" data-to="1700" data-speed="1500"></h2>
+                             <h2 class="timer count-number" data-to="{{count($data[1])}}"data-speed="1500"></h2>
                         </div>
-                        <p class="count-text ">SomeText GoesHere</p>
+                        <h5 class="count-text ">Total User</h5>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="counter">
                         <div class="counter_item">
                             <span><i class="fas fa-user"></i></span>
-                             <h2 class="timer count-number" data-to="11900" data-speed="1500"></h2>
+                             <h2 class="timer count-number" data-to="{{$data[2]}}" data-speed="1500"></h2>
                         </div>
-                        <p class="count-text ">SomeText GoesHere</p>
+                        <h5 class="count-text ">Total Payment</h5>
                           
                     </div>
                 </div>
@@ -407,12 +407,18 @@
                             <span><i class="fa fa-bug"></i></span>
                              <h2 class="timer count-number" data-to="157" data-speed="1500"></h2>
                         </div>
-                         <p class="count-text ">SomeText GoesHere</p>
+                        <h5 class="count-text ">Totlal Completed Jobs</h5>
                     </div>
                 </div>
             </div>
         </section>
         <!--/ counter_area -->
+
+
+
+       
+
+
         <!-- table area -->
         <section class="table_area">
             <div class="panel">

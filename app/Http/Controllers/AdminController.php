@@ -29,18 +29,16 @@ class AdminController extends Controller
         }
     }
 
-// get all user
+    // get all user
+    public function getAllJobs()
+    {
+        $jobs = DB::table('jobs')->get()->toArray();
+        $users =  DB::table('users')->get()->toArray();
+        $amount = DB::table("jobs")->get()->sum("amount");
 
-
-    // public function showJobs()
-    // {
-    //    $users = DB::table('users')->get()->toArray();
- 
-     
-    //          return view('jobform', ['job' => $users]);
-          
-       
-    // }
+        //  dd($users);
+        return view('admin.index', ['data' => [$jobs, $users, $amount]]);
+    }
 
     public function AdminLogout()
     {

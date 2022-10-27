@@ -24,9 +24,13 @@ Route::prefix('admin')->group(function () {
     Route::post('/login/owner', [AdminController::class, 'Login'])->name('admin.login');
 
     Route::get('/dashboard', [AdminController::class, 'Dashboard'])->name('admin.dashboard')->middleware('admin');
+    Route::get('/dashboard', [AdminController::class, 'getAllJobs'])->name('admin.dashboard')->middleware('admin');
+
     Route::get('/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout')->middleware('admin');
     Route::get('/jobform', [JobController::class, 'getJobPage'])->name('admin.jobform')->middleware('admin');
     Route::post('/posted-jobs-data', [JobController::class, 'sendPostedJobsData'])->middleware('admin');
+    Route::post('/posted-jobs-data', [JobController::class, 'sendEmail'])->middleware('admin');
+
 
 
     Route::get('/register', [RegisteredUserController::class, 'create'])->middleware('admin')

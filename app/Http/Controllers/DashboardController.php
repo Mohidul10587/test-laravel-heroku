@@ -17,10 +17,13 @@ class DashboardController extends Controller
    {
       $jobs = DB::table('jobs')->get()->toArray();
 
-      foreach ($jobs as $job) {
-         if ($job->empoyee_name == Auth::user()->name) {
-            return view('dashboard', ['job' => $job]);
-         }
-      }
+      return view('dashboard', ['jobs' => $jobs]);
+   }
+
+
+   public function sendEmail (){
+
+
+
    }
 }
