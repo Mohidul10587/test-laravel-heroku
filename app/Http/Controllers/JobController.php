@@ -34,7 +34,11 @@ class JobController extends Controller
 
     }
 
-
+    public function getUsers()
+    {
+        $users =  DB::table('users')->get()->toArray();
+        return view('admin.jobform', ['users' => $users]);
+    }
 
 
 }

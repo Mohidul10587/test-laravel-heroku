@@ -28,8 +28,9 @@ Route::prefix('admin')->group(function () {
 
     Route::get('/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout')->middleware('admin');
     Route::get('/jobform', [JobController::class, 'getJobPage'])->name('admin.jobform')->middleware('admin');
+    Route::get('/jobform', [JobController::class, 'getUsers'])->name('admin.jobform')->middleware('admin');
     Route::post('/posted-jobs-data', [JobController::class, 'sendPostedJobsData'])->middleware('admin');
- 
+
 
 
 
