@@ -44,7 +44,12 @@
             <option value="saab">Saab</option>
             <option value="mercedes">Mercedes</option>
             <option value="audi">Audi</option>
+            <option value="Mohid">Mohid</option>
+            <option value="Ashik">Ashik</option>
+            <option value="Ashik">Faijh</option>
         </select><br>
+        <input type="email" value="faijhaakhter@gmail.com" name="email_address"><br>
+
         <button type="submit">Submit</button>
 
 
@@ -53,7 +58,7 @@
 
 
 
-    
+
 
 </body>
 

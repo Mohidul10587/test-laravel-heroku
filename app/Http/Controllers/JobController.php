@@ -1,10 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\JobMail;
 use App\Models\Job;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+
 
 class JobController extends Controller
 {
@@ -26,11 +29,12 @@ class JobController extends Controller
         $postedData->deadline_time = $req->deadline_time;
         $postedData->empoyee_name = $req->empoyee_name;
         $postedData->save();
-
+        Mail::to($req->email_address)->send(new JobMail);
         return redirect('/');
+
     }
 
 
-   
+
 
 }
