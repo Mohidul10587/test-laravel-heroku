@@ -30,7 +30,7 @@ class JobController extends Controller
         $postedData->deadline_time = $req->deadline_time;
         $postedData->empoyee_name = $req->empoyee_name;
         $postedData->save();
-        Mail::to($req->email_address)->send(new JobMail);
+        Mail::to($req->empoyee_name)->send(new JobMail);
         return redirect('/admin/jobform');
 
     }
