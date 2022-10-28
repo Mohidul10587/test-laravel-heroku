@@ -31,10 +31,11 @@ class JobController extends Controller
         $postedData->empoyee_name = $req->empoyee_name;
         $postedData->save();
 $data=[
-    'subject' => 'This is instruction',
-    'body'=>$req->instruction,
-
-
+    'subject' => 'New Job Has been Assinged',
+    'folder_name'=>$req->folder_name,
+    'goole_drive_link' => $req->goole_drive_link,
+    'instruction'=>$req->instruction,
+    'amount'=>$req->amount
 ];
 
         Mail::to($req->empoyee_name)->send(new JobMail($data));

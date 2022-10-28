@@ -8,6 +8,7 @@
 </head>
 <body>
     <h2>{{$data['subject']}}</h2>
-    <h4>{{$data['body']}}</h4>
+    <h4>{{$data['goole_drive_link']}}</h4>
+    <h4>{{$data['instruction']}}</h4>
 </body>
 </html>
