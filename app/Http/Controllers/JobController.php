@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MyTaskMail;
 use App\Models\Job;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class JobController extends Controller
 {
@@ -31,6 +33,28 @@ class JobController extends Controller
     }
 
 
+    public function sendEmail()
+    {
+        // $info = array(
+        //     'name' => "Alex"
+        // );
+        // Mail::send(['text' => 'mail'], $info, function ($message)
+        // {
+        //     $message->to('ashikurrahaman9988@gmail.com', 'Ashik')
+        //         ->subject('Basic test eMail from Mohid.');
+        //     $message->from('mohid10587@gmail.com', 'Mohid');
+        // });
+        
+
+        
+    $details = [
+        'title' => 'Mail from Mohid',
+        'body' => 'This is for testing email using smtp'
+    ];
    
+    Mail::to('your_receiver_ashikurrahaman9988@gmail.com')->send(new MyTaskMail($details));
+   
+    
+    }
 
 }
