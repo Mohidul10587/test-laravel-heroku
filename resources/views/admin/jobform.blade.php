@@ -20,7 +20,6 @@
 </head>
 
 <body style="text-align: center;">
-    <p>{{ count($users) }}</p>
     <h2>Job Info</h2>
     <form action="posted-jobs-data" method="post">
         @csrf

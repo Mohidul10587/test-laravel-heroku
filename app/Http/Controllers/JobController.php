@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\JobMail;
 use App\Models\Job;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -30,11 +31,16 @@ class JobController extends Controller
         $postedData->empoyee_name = $req->empoyee_name;
         $postedData->save();
         Mail::to($req->email_address)->send(new JobMail);
-        return redirect('/');
+        return redirect('/admin/jobform');
 
     }
 
 
-   
+    public function getUsers()
+    {
+        $users =  DB::table('users')->get()->toArray();
+        return view('admin.jobform', ['users' => $users]);
+    }
+
 
 }
