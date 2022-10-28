@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// admin route starts here 
+// admin route starts here
 
 Route::prefix('admin')->group(function () {
     Route::get('/login', [AdminController::class, 'Index'])->name('login_form');
@@ -28,8 +28,10 @@ Route::prefix('admin')->group(function () {
 
     Route::get('/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout')->middleware('admin');
     Route::get('/jobform', [JobController::class, 'getJobPage'])->name('admin.jobform')->middleware('admin');
+    Route::get('/jobform', [JobController::class, 'getUsers'])->name('admin.jobform')->middleware('admin');
     Route::post('/posted-jobs-data', [JobController::class, 'sendPostedJobsData'])->middleware('admin');
-    Route::post('/posted-jobs-data', [JobController::class, 'sendEmail'])->middleware('admin');
+
+
 
 
 
@@ -41,7 +43,7 @@ Route::prefix('admin')->group(function () {
 
 
 
-// admin route ends here 
+// admin route ends here
 
 
 

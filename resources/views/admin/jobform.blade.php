@@ -20,7 +20,7 @@
 </head>
 
 <body style="text-align: center;">
-
+    <p>{{ count($users) }}</p>
     <h2>Job Info</h2>
     <form action="posted-jobs-data" method="post">
         @csrf
@@ -40,11 +40,30 @@
         <input type="time" id='deadline_time' placeholder="Deadline of time" name="deadline_time"><br>
         <label for="empoyee_name">Assign to..</label><br>
         <select name="empoyee_name" id="empoyee_name">
-            <option value="volvo">Emplyee Name</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
+            <option value="volvo">Employee Name</option>
+
+            @foreach ($users as $user)
+                <option value="{{ $user->name }}">
+                   {{ $user->name }}
+                </option>
+            @endforeach
+
+
+
         </select><br>
+        <select name="email_address" id="empoyee_name">
+            <option value="volvo"> Email of Employee</option>
+
+            @foreach ($users as $user)
+                <option value="{{ $user->email }}">
+                  Email of {{ $user->name }}
+                </option>
+            @endforeach
+
+
+
+        </select><br>
+
         <button type="submit">Submit</button>
 
 
@@ -53,7 +72,7 @@
 
 
 
-    
+
 
 </body>
 
