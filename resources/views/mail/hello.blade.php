@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>This is a simple email for you</h1>
+    <h2>{{$data['subject']}}</h2>
+    <h4>{{$data['body']}}</h4>
 </body>
 </html>
