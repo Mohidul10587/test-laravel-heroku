@@ -26,7 +26,7 @@
                         <tbody>
                            
                         @foreach($jobs as $job)
-                        @if($job->empoyee_name == Auth::user()->name)
+                        @if($job->empoyee_name == Auth::user()->email)
                         <tr>
                                 <td style="text-align: center;">{{$job->id}}</td>
                                 <td style="text-align: center;">{{$job->folder_name}}</td>
