@@ -38,7 +38,6 @@
                                 <td style="text-align: center;"><a href="{{$job->goole_drive_link}}">Link</a></td>
                                 <td style="text-align: center;">{{$job->deadline_date}}</td>
                                 <td style="text-align: center;">{{$job->deadline_time}}</td>
-                        
                             </tr>
                             @endif
                             @endforeach
