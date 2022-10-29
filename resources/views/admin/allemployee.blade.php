@@ -103,89 +103,28 @@
 </aside><!-- /sidebar Area-->
 
 
-
-
-
-
-<div class="content_wrapper">
-    <!--middle content wrapper-->
-    <div class="middle_content_wrapper">
-        <!-- counter_area -->
-        <section class="counter_area">
-            <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="counter">
-                        <div class="counter_item">
-                            <span><i class="fa fa-code"></i></span>
-                            <h2 class="timer count-number" data-to="{{count($data[0])}}" data-speed="1500"></h2>
-                        </div>
-
-                        <h5 class="count-text ">Total Pending Jobs</h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="counter">
-                        <div class="counter_item">
-                            <span><i class="fa fa-coffee"></i></span>
-                            <h2 class="timer count-number" data-to="{{count($data[1])}}" data-speed="1500"></h2>
-                        </div>
-                        <h5 class="count-text ">Total User</h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="counter">
-                        <div class="counter_item">
-                            <span><i class="fas fa-user"></i></span>
-                            <h2 class="timer count-number" data-to="{{$data[2]}}" data-speed="1500"></h2>
-                        </div>
-                        <h5 class="count-text ">Total Payment</h5>
-
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="counter">
-                        <div class="counter_item">
-                            <span><i class="fa fa-bug"></i></span>
-                            <h2 class="timer count-number" data-to="157" data-speed="1500"></h2>
-                        </div>
-                        <h5 class="count-text ">Totlal Completed Jobs</h5>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- all jobs information starts here -->
-
-
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+<div>
+<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table>
-                        <thead style="border: 1px solid black; background-color:#668cff; color:white;">
-                            <th style="text-align: center; padding: 0 20px">Employee's Email</th>
-                            <th style="text-align: center; padding: 0 20px">Job Id</th>
-                            <th style="text-align: center; padding: 0 20px">Folder Name</th>
-                            <th style="text-align: center; padding: 0 20px">Job Type</th>
-                            <th style="text-align: center; padding: 0 20px">Total Image</th>
-                            <th style="text-align: center; padding: 0 20px">Amount</th>
-                            <th style="text-align: center; padding: 0 20px">Google Drive Link</th>
-                            <th style="text-align: center; padding: 0 20px">Deadline Date</th>
-                            <th style="text-align: center; padding: 0 20px">Deadline time</th>
+                        <thead style="border: 1px solid gray; background-color:#668cff; color:white;">
+                            <th style="text-align: center; padding: 0 20px">Name</th>
+                            <th style="text-align: center; padding: 0 20px">Email</th>
+                            <th style="text-align: center; padding: 0 20px">Phone No</th>
+
+              
                         </thead>
                         <tbody>
 
-                            @foreach($data[0] as $job)
+                        @foreach($users as $user)
 
-                            <tr style="border: 1px solid black;">
-                                <td style="text-align: center; padding-left:10px;">{{$job->empoyee_name}}</td>
-                                <td style="text-align: center;">{{$job->id}}</td>
-                                <td style="text-align: center;">{{$job->folder_name}}</td>
-                                <td style="text-align: center;">{{$job->job_type}}</td>
-                                <td style="text-align: center;">{{$job->total_image}}</td>
-                                <td style="text-align: center;">{{$job->amount}}</td>
-                                <td style="text-align: center;"><a href="{{$job->goole_drive_link}}">Link</a></td>
-                                <td style="text-align: center;">{{$job->deadline_date}}</td>
-                                <td style="text-align: center;">{{$job->deadline_time}}</td>
+                            <tr style="border: 1px solid gray;">
+                                <td style="text-align: center; padding-left:10px;">{{$user->name}}</td>
+                                <td style="text-align: center;">{{$user->email}}</td>
+                                <td style="text-align: center;"><a href="tel:+8801744790726">Shuvo's Number</a></td>
+
+                        
 
                             </tr>
 
@@ -196,10 +135,18 @@
                 </div>
             </div>
         </div>
-        <!-- all jobs information ends here -->
-
-    </div>
-    <!--/middle content wrapper-->
 </div>
-<!--/ content wrapper -->
+
+
+
+
+
+
+
+
+
+
+
+
+
 @endsection

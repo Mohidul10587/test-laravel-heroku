@@ -31,15 +31,18 @@ class JobController extends Controller
         $postedData->empoyee_name = $req->empoyee_name;
         $postedData->save();
 $data=[
-    'subject' => 'New Job Has been Assinged',
+    'subject'=>'Hi Friend , A new job has assigned for you ',
+    'job_type'=>$req->job_type,
+    'total_image'=>$req->total_image,
+    'amount'=>$req->amount,
+    'instruction'=> $req->instruction,
     'folder_name'=>$req->folder_name,
     'goole_drive_link' => $req->goole_drive_link,
-    'instruction'=>$req->instruction,
-    'amount'=>$req->amount
+
 ];
 
         Mail::to($req->empoyee_name)->send(new JobMail($data));
-        return redirect('/admin/jobform');
+        return redirect('/admin/jobform')->with('massage', "Job sent successfully ");
 
     }
 
