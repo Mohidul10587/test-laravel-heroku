@@ -20,6 +20,10 @@ class DashboardController extends Controller
       return view('dashboard', ['jobs' => $jobs]);
    }
 
-
+   public function destroy($id) {
+      DB::delete('delete from jobs where id = ?',[$id]);
+      $jobs = DB::table('jobs')->get()->toArray();
+      return view('dashboard', ['jobs' => $jobs]);
+  }
 
 }

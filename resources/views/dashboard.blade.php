@@ -38,6 +38,7 @@
                                 <td style="text-align: center;"><a href="{{$job->goole_drive_link}}">Link</a></td>
                                 <td style="text-align: center;">{{$job->deadline_date}}</td>
                                 <td style="text-align: center;">{{$job->deadline_time}}</td>
+                                <td><a href = '/delete/{{$job->id}}'>Complete</a></td>
                             </tr>
                             @endif
                             @endforeach

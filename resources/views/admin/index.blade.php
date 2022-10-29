@@ -156,36 +156,37 @@
 
         <!-- all jobs information starts here -->
 
+        <h2 style="text-align: center;">All Pending Jobs</h2>
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table>
-                        <thead style="border: 1px solid black; background-color:#668cff; color:white;">
-                            <th style="text-align: center; padding: 0 20px">Employee's Email</th>
-                            <th style="text-align: center; padding: 0 20px">Job Id</th>
-                            <th style="text-align: center; padding: 0 20px">Folder Name</th>
-                            <th style="text-align: center; padding: 0 20px">Job Type</th>
-                            <th style="text-align: center; padding: 0 20px">Total Image</th>
-                            <th style="text-align: center; padding: 0 20px">Amount</th>
-                            <th style="text-align: center; padding: 0 20px">Google Drive Link</th>
-                            <th style="text-align: center; padding: 0 20px">Deadline Date</th>
-                            <th style="text-align: center; padding: 0 20px">Deadline time</th>
+                        <thead style="border: 1px solid gray; background-color:#668cff; color:white;">
+                            <th style="text-align: center; padding: 4px 20px">Employee's Email</th>
+                            <th style="text-align: center; padding: 4px 20px">Job Id</th>
+                            <th style="text-align: center; padding: 4px 20px">Folder Name</th>
+                            <th style="text-align: center; padding: 4px 20px">Job Type</th>
+                            <th style="text-align: center; padding: 4px 20px">Total Image</th>
+                            <th style="text-align: center; padding: 4px 20px">Amount</th>
+                            <th style="text-align: center; padding: 4px 20px">Google Drive Link</th>
+                            <th style="text-align: center; padding: 4px 20px">Deadline Date</th>
+                            <th style="text-align: center; padding: 4px 20px">Deadline time</th>
                         </thead>
                         <tbody>
 
                             @foreach($data[0] as $job)
 
-                            <tr style="border: 1px solid black;">
-                                <td style="text-align: center; padding-left:10px;">{{$job->empoyee_name}}</td>
-                                <td style="text-align: center;">{{$job->id}}</td>
-                                <td style="text-align: center;">{{$job->folder_name}}</td>
-                                <td style="text-align: center;">{{$job->job_type}}</td>
-                                <td style="text-align: center;">{{$job->total_image}}</td>
-                                <td style="text-align: center;">{{$job->amount}}</td>
-                                <td style="text-align: center;"><a href="{{$job->goole_drive_link}}">Link</a></td>
-                                <td style="text-align: center;">{{$job->deadline_date}}</td>
-                                <td style="text-align: center;">{{$job->deadline_time}}</td>
+                            <tr style="border: 1px solid gray;">
+                                <td style="text-align: center; padding:10px;">{{$job->empoyee_name}}</td>
+                                <td style="text-align: center; padding:10px;">{{$job->id}}</td>
+                                <td style="text-align: center; padding:10px;">{{$job->folder_name}}</td>
+                                <td style="text-align: center; padding:10px;">{{$job->job_type}}</td>
+                                <td style="text-align: center; padding:10px;">{{$job->total_image}}</td>
+                                <td style="text-align: center; padding:10px;">{{$job->amount}}</td>
+                                <td style="text-align: center; padding:10px;"><a href="{{$job->goole_drive_link}}">Link</a></td>
+                                <td style="text-align: center; padding:10px;">{{$job->deadline_date}}</td>
+                                <td style="text-align: center; padding:10px;">{{$job->deadline_time}}</td>
 
                             </tr>
 

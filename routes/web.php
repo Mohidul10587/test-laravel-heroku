@@ -25,13 +25,17 @@ Route::prefix('admin')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'Dashboard'])->name('admin.dashboard')->middleware('admin');
     Route::get('/dashboard', [AdminController::class, 'getAllJobs'])->name('admin.dashboard')->middleware('admin');
     Route::get('/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout')->middleware('admin');
+    Route::get('/allemployee', [AdminController::class, 'getAllEmployeePage'])->middleware('admin');
+    Route::get('delete_employee/{id}', [AdminController::class, 'deleteEmployee'])->middleware('admin');
+
+
     Route::get('/jobform', [JobController::class, 'getJobPage'])->name('admin.jobform')->middleware('admin');
     Route::get('/jobform', [JobController::class, 'getUsers'])->name('admin.jobform')->middleware('admin');
     Route::post('/posted-jobs-data', [JobController::class, 'sendPostedJobsData'])->middleware('admin');
     Route::get('/register', [RegisteredUserController::class, 'create'])->middleware('admin')
         ->name('register');
     Route::post('/register', [RegisteredUserController::class, 'store'])->middleware('admin');
-    Route::get('/allemployee', [AllEmployeeController::class, 'getAllEmployeePage'])->middleware('admin');
+  
 
 });
 
@@ -51,5 +55,5 @@ Route::get('/dashboard', [DashboardController::class, 'getDashboard'])
 Route::get('/dashboard', [DashboardController::class, 'showJobs'])
     ->middleware(['auth', 'verified'])->name('dashboard');
 
-
+Route::get('delete/{id}', [DashboardController::class, 'destroy'])->middleware(['auth', 'verified']);
 require __DIR__ . '/auth.php';

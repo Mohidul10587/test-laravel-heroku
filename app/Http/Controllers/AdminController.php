@@ -46,5 +46,22 @@ class AdminController extends Controller
         return redirect()->route('login_form')->with('error', "Admin logout successfully");
     }
 
+    public function getAllEmployeePage()
+    {
+        
+        $users =  DB::table('users')->get()->toArray();
+        return view('admin.allemployee',["users"=>$users]);
+    }
+
+
+    
+
+    public function deleteEmployee($id)
+    {
+        
+        DB::delete('delete from users where id = ?',[$id]);
+        $users =  DB::table('users')->get()->toArray();
+        return view('admin.allemployee',["users"=>$users]);
+    }
 
 }
