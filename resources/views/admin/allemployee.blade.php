@@ -17,6 +17,7 @@
 
 
     <ul class="header_menu">
+        <li> <a style="color:white" href="/dashboard">User Board</a></li>
         <li> <a style="color:white" href="/admin/allemployee">All Employee</a></li>
         <li> <a style="color:white" href="/admin/register">Add a User</a></li>
         <li> <a style="color:white" href="/admin/jobform">Post A Job</a></li>
@@ -105,11 +106,11 @@
 
 <div>
 
-<!-- All employee starts here -->
-<h2 style="text-align: center;">List of Employees</h2>
+    <!-- All employee starts here -->
+    <h2 style="text-align: center;">List of Employees</h2>
 
-<div style="display: flex; justify-content:center;margin-top:40px">
-<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div style="display: flex; justify-content:center;margin-top:40px">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table>
@@ -120,17 +121,19 @@
                             <th style="text-align: center; padding: 10px 80px">Delete</th>
 
 
-              
+
                         </thead>
                         <tbody>
 
-                        @foreach($users as $user)
+                            @foreach($users as $user)
 
                             <tr style="border: 1px solid gray;">
                                 <td style="text-align: center; padding:10px;">{{$user->name}}</td>
                                 <td style="text-align: center; padding:10px;">{{$user->email}}</td>
-                                <td style="text-align: center; padding:10px;"><a href="tel:+8801744790726">Shuvo's Number</a></td>
-                                <td style="text-align: center; padding:10px;"><a href="/admin/delete_employee/{{$user->id}}">Remove The Employee</a></td>
+                                <td style="text-align: center; padding:10px;"><a href="tel:+8801744790726">Shuvo's
+                                        Number</a></td>
+                                <td style="text-align: center; padding:10px;"><a
+                                        href="/admin/delete_employee/{{$user->id}}">Remove The Employee</a></td>
                             </tr>
 
                             @endforeach
@@ -140,7 +143,7 @@
                 </div>
             </div>
         </div>
-</div>
+    </div>
 </div>
 
 

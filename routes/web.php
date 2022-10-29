@@ -55,5 +55,5 @@ Route::get('/dashboard', [DashboardController::class, 'getDashboard'])
 Route::get('/dashboard', [DashboardController::class, 'showJobs'])
     ->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('delete/{id}', [DashboardController::class, 'destroy'])->middleware(['auth', 'verified']);
+Route::get('sendEmail', [DashboardController::class, 'sendEmailToAdmin']);
 require __DIR__ . '/auth.php';

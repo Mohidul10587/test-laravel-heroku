@@ -7,7 +7,6 @@
 
     <div class="py-12">
         <h3 style="text-align: center; font-size:30px">{{ Auth::user()->name }}</h3>
-
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
@@ -22,7 +21,7 @@
                             <th style="text-align: center; padding: 0 20px">Google Drive Link</th>
                             <th style="text-align: center; padding: 0 20px">Deadline Date</th>
                             <th style="text-align: center; padding: 0 20px">Deadline time</th>
-                  
+
                         </thead>
                         <tbody>
 
@@ -32,13 +31,14 @@
                                 <td style="text-align: center;">{{$job->id}}</td>
                                 <td style="text-align: center;">{{$job->folder_name}}</td>
                                 <td style="text-align: center;">{{$job->job_type}}</td>
-                                <td style="text-align: center;"><textarea style="height: 23px; width: 100px;padding-top:0px;">{{$job->instruction}}</textarea> </td>
+                                <td style="text-align: center;"><textarea style="height: 23px; width: 100px;padding-top:0px;">{{$job->instruction}}</textarea>
+                                </td>
                                 <td style="text-align: center;">{{$job->total_image}}</td>
                                 <td style="text-align: center;">{{$job->amount}}</td>
                                 <td style="text-align: center;"><a href="{{$job->goole_drive_link}}">Link</a></td>
                                 <td style="text-align: center;">{{$job->deadline_date}}</td>
                                 <td style="text-align: center;">{{$job->deadline_time}}</td>
-                                <td><a href = '/delete/{{$job->id}}'>Complete</a></td>
+                                <td><a onclick="changeText()" id='complete_button' href='sendEmail'>Complete</a></td>
                             </tr>
                             @endif
                             @endforeach
@@ -51,3 +51,4 @@
     </div>
 
 </x-app-layout>
+
