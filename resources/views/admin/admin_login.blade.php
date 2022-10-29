@@ -50,7 +50,6 @@
                     </div>
                     @endif
 
-
                     <form action=" {{route('admin.login')}}" class="d-block" method="post">
                         @csrf
                         <div class="form-group icon_parent">
