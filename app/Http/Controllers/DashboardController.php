@@ -45,6 +45,9 @@ class DashboardController extends Controller
         $complete->google_drive_link = $req->google_drive_link;
         $complete->employee_email = $req->employee_email;
         $complete->employee_name = $req->employee_name;
+        $complete->deadline_date = $req->deadline_date;
+        $complete->deadline_time = $req->deadline_time;
+
         $complete->save();
 
 

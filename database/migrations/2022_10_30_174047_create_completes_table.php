@@ -24,6 +24,8 @@ return new class extends Migration
             $table->string('google_drive_link');
             $table->string('employee_email');
             $table->string('employee_name');
+            $table->string('deadline_date');
+            $table->string('deadline_time');
             $table->timestamps();
         });
     }

@@ -17,6 +17,7 @@
 
 
     <ul class="header_menu">
+        <li> <a style="color:white" href="/admin/onProcess">On Checking Jobs</a></li>
         <li> <a style="color:white" href="/admin/allemployee">All Employee</a></li>
         <li> <a style="color:white" href="/admin/register">Add a User</a></li>
         <li> <a style="color:white" href="/admin/jobform">Post A Job</a></li>
