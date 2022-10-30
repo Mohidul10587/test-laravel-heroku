@@ -35,17 +35,27 @@ class DashboardController extends Controller
 
     public function sendEmailToAdmin(Request $req)
     {
-        // $data = [
-        //     'subject' => 'Job Complete',
-        // ];
-        // Mail::to('rakibsheikh0059@gmail.com')->send(new CompleteNotificationMail($data));
-
-
         $complete = new Complete();
         $complete->folder_name = $req->folder_name;
+        $complete->job_id = $req->job_id;
+        $complete->job_type = $req->job_type;
+        $complete->instruction = $req->instruction;
+        $complete->total_image = $req->total_image;
+        $complete->amount = $req->amount;
+        $complete->google_drive_link = $req->google_drive_link;
+        $complete->employee_email = $req->employee_email;
+        $complete->employee_name = $req->employee_name;
         $complete->save();
 
-        $jobs = DB::table('jobs')->get()->toArray();
+
+
+        // $data = [
+        //     'subject' => 'Job Complete',
+        //         ];
+        // Mail::to('rakibsheikh0059@gmail.com')->send(new CompleteNotificationMail($data));
+
+        DB::delete('delete from jobs where id = ?',[$req->id]);
+
         return redirect('dashboard');
     }
 }

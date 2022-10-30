@@ -48,20 +48,26 @@ class AdminController extends Controller
 
     public function getAllEmployeePage()
     {
-        
+
         $users =  DB::table('users')->get()->toArray();
         return view('admin.allemployee',["users"=>$users]);
     }
 
 
-    
+
 
     public function deleteEmployee($id)
     {
-        
+
         DB::delete('delete from users where id = ?',[$id]);
         $users =  DB::table('users')->get()->toArray();
         return view('admin.allemployee',["users"=>$users]);
+    }
+
+    public function getOnProcessJobs()
+    {
+       $onProcessJobs= DB::table('completes')->get()->toArray();
+       return view ('admin.on_processing_jobs',["jobs"=>$onProcessJobs]);
     }
 
 }
