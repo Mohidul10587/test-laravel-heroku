@@ -103,8 +103,6 @@
     </nav>
 </aside><!-- /sidebar Area-->
 
-
-
 <h2 style="text-align: center;">Cheking Jobs</h2>
 
 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
