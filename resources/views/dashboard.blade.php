@@ -25,22 +25,33 @@
                         </thead>
                         <tbody>
 
-                            @foreach($jobs as $job)
-                            @if($job->empoyee_name == Auth::user()->email)
-                            <tr>
-                                <td style="text-align: center;">{{$job->id}}</td>
-                                <td style="text-align: center;">{{$job->folder_name}}</td>
-                                <td style="text-align: center;">{{$job->job_type}}</td>
-                                <td style="text-align: center;"><textarea style="height: 23px; width: 100px;padding-top:0px;">{{$job->instruction}}</textarea>
-                                </td>
-                                <td style="text-align: center;">{{$job->total_image}}</td>
-                                <td style="text-align: center;">{{$job->amount}}</td>
-                                <td style="text-align: center;"><a href="{{$job->goole_drive_link}}">Link</a></td>
-                                <td style="text-align: center;">{{$job->deadline_date}}</td>
-                                <td style="text-align: center;">{{$job->deadline_time}}</td>
-                                <td><a onclick="changeText()" id='complete_button' href='sendEmail'>Complete</a></td>
-                            </tr>
-                            @endif
+                            @foreach ($jobs as $job)
+                                @if ($job->empoyee_name == Auth::user()->email)
+                                    <tr>
+                                        <td style="text-align: center;">{{ $job->id }}</td>
+                                        <td style="text-align: center;">{{ $job->folder_name }}</td>
+                                        <td style="text-align: center;">{{ $job->job_type }}</td>
+                                        <td style="text-align: center;">
+                                            <textarea style="height: 23px; width: 100px;padding-top:0px;">{{ $job->instruction }}</textarea>
+                                        </td>
+                                        <td style="text-align: center;">{{ $job->total_image }}</td>
+                                        <td style="text-align: center;">{{ $job->amount }}</td>
+                                        <td style="text-align: center;"><a href="{{ $job->goole_drive_link }}">Link</a>
+                                        </td>
+                                        <td style="text-align: center;">{{ $job->deadline_date }}</td>
+                                        <td style="text-align: center;">{{ $job->deadline_time }}</td>
+                                        <td style="text-align: center;">
+                                            <form action="sendEmail" method="post">
+                                                @csrf
+                                                <input type="text" name="folder_name"
+                                                    value="{{ $job->folder_name }}">
+                                                <input type="submit" value="Submit">
+
+                                            </form>
+
+                                        </td>
+                                    </tr>
+                                @endif
                             @endforeach
                         </tbody>
                     </table>
@@ -51,4 +62,3 @@
     </div>
 
 </x-app-layout>
-

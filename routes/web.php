@@ -35,7 +35,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/register', [RegisteredUserController::class, 'create'])->middleware('admin')
         ->name('register');
     Route::post('/register', [RegisteredUserController::class, 'store'])->middleware('admin');
-  
+
 
 });
 
@@ -55,5 +55,5 @@ Route::get('/dashboard', [DashboardController::class, 'getDashboard'])
 Route::get('/dashboard', [DashboardController::class, 'showJobs'])
     ->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('sendEmail', [DashboardController::class, 'sendEmailToAdmin']);
+Route::post('sendEmail', [DashboardController::class, 'sendEmailToAdmin']);
 require __DIR__ . '/auth.php';
