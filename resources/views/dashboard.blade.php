@@ -41,12 +41,27 @@
                                         <td style="text-align: center;">{{ $job->deadline_date }}</td>
                                         <td style="text-align: center;">{{ $job->deadline_time }}</td>
                                         <td style="text-align: center;">
-                                            <form action="sendEmail" method="post">
+                                            <form action="sendEmail/{{ $job->id }}" method="post">
                                                 @csrf
-                                                <input type="text" name="folder_name"
+                                                <input style="display: none" type="text" name="folder_name"
                                                     value="{{ $job->folder_name }}">
+                                                <input style="display: none" type="text" name="job_id"
+                                                    value="{{ $job->job_id }}">
+                                                <input style="display: none" type="text" name="job_type"
+                                                    value="{{ $job->job_type }}">
+                                                <input style="display: none" type="text" name="instruction"
+                                                    value="{{ $job->instruction }}">
+                                                <input style="display: none" type="text" name="total_image"
+                                                    value="{{ $job->total_image }}">
+                                                <input style="display: none" type="text" name="amount"
+                                                    value="{{ $job->amount }}">
+                                                <input style="display: none" type="text" name="google_drive_link"
+                                                    value="{{ $job->goole_drive_link }}">
+                                                <input style="display: none" type="text" name="employee_email"
+                                                    value="{{ Auth::user()->email }}">
+                                                <input style="display: none" type="text" name="employee_name"
+                                                    value="{{ Auth::user()->name }}">
                                                 <input type="submit" value="Submit">
-
                                             </form>
 
                                         </td>
