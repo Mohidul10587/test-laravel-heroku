@@ -105,7 +105,7 @@
 
 
 
-<h2 style="text-align: center;">All Cheking Jobs</h2>
+<h2 style="text-align: center;">Cheking Jobs</h2>
 
 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
