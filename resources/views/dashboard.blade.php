@@ -61,6 +61,10 @@
                                                     value="{{ Auth::user()->email }}">
                                                 <input style="display: none" type="text" name="employee_name"
                                                     value="{{ Auth::user()->name }}">
+                                                <input style="display: none" type="text" name="deadline_date"
+                                                    value="{{ $job->deadline_date }}">
+                                                <input style="display: none" type="text" name="deadline_time"
+                                                    value="{{ $job->deadline_time }}">
                                                 <input type="submit" value="Submit">
                                             </form>
 
