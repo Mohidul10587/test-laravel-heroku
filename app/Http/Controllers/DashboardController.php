@@ -52,10 +52,10 @@ class DashboardController extends Controller
 
 
 
-        // $data = [
-        //     'subject' => 'Job Complete',
-        //         ];
-        // Mail::to('rakibsheikh0059@gmail.com')->send(new CompleteNotificationMail($data));
+        $data = [
+            'subject' => 'Job Complete',
+                ];
+        Mail::to('mohid10587@gmail.com')->send(new CompleteNotificationMail($data));
 
         DB::delete('delete from jobs where id = ?',[$req->id]);
 
